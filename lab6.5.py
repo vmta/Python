@@ -1,8 +1,14 @@
 def convert_n_to_m(x, n, m):
 	
-	convertString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	if int(n) < 1 or int(m) > 36:
+		return False
 	
 	x = str(x).upper()
+	
+	if x.find("-") > -1:
+		return False
+	
+	convertString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	
 	def convert_n_to_10(x, n):
 		decNum = 0
@@ -48,6 +54,8 @@ def convert_n_to_m(x, n, m):
 			#print "Return convert_10_to_m(convert_n_to_10(x, n), m) as not (n==10 | m==10)"
 			return convert_10_to_m(convert_n_to_10(x, n), m)
 
+print "-777 with base 10 converting to base 2 => " + str(convert_n_to_m(-777, 10, 2))
+print "FALSE"
 
 print "4DAD5 with base 13 converting to base 10 => " + str(convert_n_to_m("4dad5", 13, 10))
 print "318165"
