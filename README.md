@@ -36,7 +36,7 @@ Various Python bits
   - [ ] Lab 3
   - [x] Lab 4
 - [ ] Week 8
-  - [ ] Lab 1
+  - [x] Lab 1
   - [ ] Lab 2
   - [ ] Lab 3
 - [ ] Exam
