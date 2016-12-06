@@ -32,7 +32,7 @@ Various Python bits
   - [x] Lab 5
 - [ ] Week 7
   - [x] Lab 1
-  - [ ] Lab 2
+  - [x] Lab 2
   - [ ] Lab 3
   - [x] Lab 4
 - [ ] Week 8
