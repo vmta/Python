@@ -1,5 +1,8 @@
 # Python
-Various Python bits
+
+All labs are done.
+Final Exam score: 30/30.
+Overall score: 98/100.
 
 - [x] Week 1
   - [x] Lab 1
@@ -40,4 +43,4 @@ Various Python bits
   - [x] Lab 2
   - [x] Lab 3
   - [x] Lab 4
-- [ ] Exam
+- [x] Exam

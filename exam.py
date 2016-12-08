@@ -60,38 +60,68 @@ class MazeRunner(object):
 # HERE GOES MY FUNCTION START
 
 import random
-def maze_controller(maze_runner):
+def maze_controller(mr):
+	while not mr.found():
+		if not mr.go():
+			mr.turn_right()
+			if not mr.go():
+				if random.randint(0,1) == 0:
+					mr.turn_left()
+					mr.turn_left()
+				else:
+					mr.turn_right()
+		else:
+			if random.randint(0,1) == 0:
+				mr.turn_right()
+				if not mr.go():
+					mr.turn_left()
+			else:
+				mr.turn_left()
+				if not mr.go():
+					mr.turn_right()
+
+#import random
+def maze_controller1(mr):
 	
 	# Cycle while gold is not found
-	while not maze_runner.found():
+	while not mr.found():
 		
 		# Try running forward
-		if not maze_runner.go():
+		if not mr.go():
 			
 			# If stuck, then try to turn right
-			maze_runner.turn_right()
+			mr.turn_right()
 			
 			# Try running forward
-			if not maze_runner.go():
+			if not mr.go():
 				
 				# If stuck, then try to turn double left
-				#maze_runner.turn_left()
-				#maze_runner.turn_left()
 				if random.randint(0,1) == 0:
-					maze_runner.turn_left()
-					maze_runner.turn_left()
+					mr.turn_left()
+					mr.turn_left()
 				else:
-					maze_runner.turn_right()
+					mr.turn_right()
 		
 		else:
-			# Though we did not hit the wall, try turning right
-			maze_runner.turn_right()
-			
-			# Try running forward
-			if not maze_runner.go():
+			if random.randint(0,1) == 0:
+				# Though we did not hit the wall, try turning right
+				mr.turn_right()
 				
-				# If stuck, get back (turn left)
-				maze_runner.turn_left()
+				# Try running forward
+				if not mr.go():
+					
+					# If stuck, get back (turn left)
+					mr.turn_left()
+			else:
+				# Though we did not hit the wall, try turning left
+				mr.turn_left()
+				
+				# Try running forward
+				if not mr.go():
+					
+					# If stuck, get back (turn right)
+					mr.turn_right()
+
 
 
 # HERE GOES MY FUNCTION STOP
